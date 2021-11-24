@@ -1,0 +1,9 @@
+import requests
+
+i = 1
+for x in range(10000):
+    url = f'https://www.larvalabs.com/public/images/cryptopunks/punk{i}.png'
+    r = requests.get(url=url)
+    with open(f'punks/punk{i}.png', 'wb') as f:
+        f.write(r.content)
+    i += 1
